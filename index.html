@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yashvardhan Agarwal - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <div id="particles-js"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="nav-logo">Yashvardhan</a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Yashvardhan</h1>
+            <p>I'm a <span id="typing-effect"></span></p>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content fade-in">
+                <p>I am passionate about coding and learning new technologies. I'm currently 
+                   exploring web development to build exciting projects and am a first-year 
+                   Computer Science student at Manipal University Jaipur.</p>
+                <p>My goal is to learn, grow, and contribute to meaningful projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section bg-light">
+        <div class="container">
+            <h2 class="fade-in">My Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card fade-in delay-1">
+                    <h3>Project 1: This Portfolio</h3>
+                    <p>My first-ever website! Built with just HTML and CSS to learn the
+                       fundamentals of web development. (And a little JavaScript for fun!)</p>
+                    <a href="https://github.com/yashvardhanagarwal5/your-portfolio-repo-name" target="_blank" class="btn">View Code</a>
+                </div>
+                
+                <div class="project-card fade-in delay-2">
+                    <h3>Project 2: Coming Soon</h3>
+                    <p>I'm currently working on my next project. Check back soon!</p>
+                    <a href="#" class="btn btn-disabled">In Progress</a>
+                </div>
+
+                <div class="project-card fade-in delay-3">
+                    <h3>Project 3: Coming Soon</h3>
+                    <p>I have big plans for this spot. Stay tuned for more updates!</p>
+                    <a href="#" class="btn btn-disabled">In Progress</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+  <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2 class="fade-in">Get in Touch</h2>
+            <p class="contact-subtitle fade-in">I'm always open to connecting. Send me a message!</p>
+
+            <div class="contact-wrapper">
+
+                <form id="contact-form" class="contact-form fade-in delay-1">
+                    
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+
+                <div class="contact-info fade-in delay-2">
+                    <h3>Or find me here:</h3>
+                    <a href="https://www.linkedin.com/in/yashvardhan-agarwal-539870266" target="_blank" class="btn">LinkedIn</a>
+                    <a href="https://github.com/yashvardhanagarwal5" target="_blank" class="btn">GitHub</a>
+                    <a href="mailto:yashvardhanagarwal5@gmail.com" class="btn">Email</a>
+                    <a href="myCV.pdf" target="_blank" class="btn">My Resume</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+=
+    <footer class="footer">  
+        <p>© 2025 Yashvardhan Agarwal. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="particles-config.js"></script> <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="main.js"></script> 
+
+</body>
+</html>
