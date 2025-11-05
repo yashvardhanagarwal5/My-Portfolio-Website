@@ -96,8 +96,15 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 3.5rem; /* You can make this bigger, like 4.5rem, if you want */
     margin-bottom: 0.5rem;
+
+    /* === THIS IS THE "CRAZY" GRADIENT === */
+    background: linear-gradient(90deg, var(--primary-color), #da70d6); /* Blue to Orchid/Purple */
+    background-clip: text;
+    -webkit-background-clip: text; /* For Safari */
+    color: transparent;
+    /* === END OF GRADIENT === */
 }
 
 .hero-content p {
@@ -115,16 +122,9 @@ body {
     background: transparent; /* All sections now transparent to show particles */
 }
 
-.section h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-}
 
-/* We still use bg-light, but now it means a soft dark grey */
-.bg-light {
-    background: var(--bg-dark-2);
-}
+
+
 
 /* ==== 5. ABOUT SECTION (DARK) ==== */
 .about-content {
@@ -138,25 +138,25 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    perspective: 1000px;
 }
 
 .project-card {
-    background: var(--bg-dark-3); /* Dark card background */
+    background: var(--bg-dark-3);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     padding: 1.5rem;
-    transition: transform 0.3s ease;
+    /* This is a more complex transition to handle the 3D effect smoothly */
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out; /* <-- REPLACE THE OLD TRANSITION */
     backdrop-filter: blur(10px);
+    transform-style: preserve-3d; /* <-- ADD THIS LINE (This is the magic) */
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-}
 
 .project-card h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
-}
+}    
 
 .project-card p {
     color: var(--text-muted); /* Softer text color for descriptions */
@@ -261,15 +261,13 @@ body {
 /* ==== 10 & 11. FADE-IN ANIMATIONS (No changes needed) ==== */
 .fade-in {
     opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition: opacity 0.8s ease-out; /* Only transition opacity */
 }
 
 .fade-in.show {
     opacity: 1;
-    transform: translateY(0);
 }
-
+   
 .fade-in.delay-1 {
     transition-delay: 200ms;
 }
@@ -290,4 +288,156 @@ body {
     left: 0;
     z-index: -1;
     background-color: var(--bg-dark-1); /* The main black background */
+}
+
+
+
+/* ==== 14. HERO GLASSMORPHISM CARD ==== */
+.hero-card {
+    background: var(--bg-dark-3); /* Uses your existing semi-transparent color */
+    backdrop-filter: blur(10px); /* This is the "frosted glass" blur */
+    padding: 2.5rem 4rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+
+/* ==== 15. CUSTOM SCROLLBAR ==== */
+
+/* This styles the full scrollbar "track" (the background) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* This styles the background of the track */
+::-webkit-scrollbar-track {
+    background: var(--bg-dark-1); /* The pure black background */
+    border-radius: 10px;
+}
+
+/* This styles the "thumb" (the part you drag) */
+::-webkit-scrollbar-thumb {
+    background: var(--bg-dark-3); /* The dark grey card color */
+    border-radius: 10px;
+    border: 1px solid var(--primary-color); /* A pop of your blue color */
+}
+
+/* This styles the thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color); /* Turns blue on hover */
+}
+
+
+/* ==== 16. UPGRADED SECTION STYLES ==== */
+
+/* A general style for all subtitles */
+.section-subtitle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--primary-color); /* Makes it your theme's blue */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* A general style for all main titles */
+.section-title {
+    font-size: 3rem; /* Bigger and bolder */
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* The new "About Me" frosted glass card */
+.about-card {
+    background: var(--bg-dark-3); /* Your semi-transparent color */
+    backdrop-filter: blur(10px); /* The frosted glass blur */
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 800px; /* Stops the text from being too wide */
+    margin: 0 auto; /* Centers the card */
+}
+
+.about-card p {
+    font-size: 1.1rem;
+    color: var(--text-muted); /* Softer text color */
+    line-height: 1.7;
+}
+
+.about-card p:first-child {
+    margin-bottom: 1rem;
+} 
+
+
+
+/* ==== 17. UPGRADED PROJECTS SECTION ==== */
+
+.projects-wrapper {
+    background: var(--bg-dark-3); /* Your semi-transparent color */
+    backdrop-filter: blur(10px); /* The frosted glass blur */
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+/* A small tweak to the grid for the new padding */
+.projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+
+/* for phone */
+
+/* ==== 19. MOBILE RESPONSIVENESS (THE FINAL STEP) ==== */
+
+/* This applies to all "large" mobile phones and tablets (up to 992px) */
+@media (max-width: 992px) {
+    .projects-grid {
+        /* Change from 3 columns to 2 */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* This applies to all standard phones (up to 768px) */
+@media (max-width: 768px) {
+    
+    /* 1. Fix the Nav Bar */
+    .nav-logo {
+        /* (We'll hide the links, so no changes needed) */
+    }
+    .nav-menu {
+        /* For now, we'll just hide the menu. A "hamburger" menu is
+           a whole new project, and this is a cleaner fix. */
+        display: none;
+    }
+
+    /* 2. Fix the Hero Section */
+    .hero-content h1 {
+        font-size: 2.5rem; /* Make text smaller on phones */
+    }
+    .hero-card {
+        padding: 2rem; /* Less padding on the card */
+    }
+
+    /* 3. Fix the Projects Section */
+    .projects-grid {
+        /* Change from 2 columns to 1 */
+        grid-template-columns: 1fr;
+    }
+
+    /* 4. Fix the Contact Section */
+    .contact-wrapper {
+        /* Change from 2 columns to 1 */
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-info {
+        /* We can't stack buttons, so let's make a grid */
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2x2 grid for buttons */
+        gap: 1rem;
+    }
 }
