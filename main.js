@@ -1,5 +1,5 @@
 new Typed('#typing-effect', {
-    strings: [
+    strings:[
         'First-Year Student',
         'Coder',
         'Web Developer',
